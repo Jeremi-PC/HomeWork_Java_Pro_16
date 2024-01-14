@@ -1,0 +1,14 @@
+{
+  "firstName" : "John",
+  "lastName" : "Doe",
+  "dateOfBirth" : [ 1970, 12, 1 ],
+  "address" : [ {
+    "zip" : 72728,
+    "street" : "12 Avenue",
+    "houseNumber" : 22
+  }, {
+    "zip" : 78254,
+    "street" : "Bruce str",
+    "houseNumber" : 25
+  } ]
+}

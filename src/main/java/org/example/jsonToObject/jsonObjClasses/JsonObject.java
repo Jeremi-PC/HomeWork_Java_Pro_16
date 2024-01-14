@@ -1,9 +1,8 @@
-package org.example.jsonToObject;
+package org.example.jsonToObject.jsonObjClasses;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 
 import java.util.Arrays;
 
@@ -18,11 +17,24 @@ public class JsonObject {
     private String userMessage;
     @JsonProperty("isError")
     private boolean isError;
-
     private SupportContact[] supportContacts;
+    public JsonObject() {
+    }
+    @Override
+    public String toString() {
+        return "JsonObject{" + '\n' +
+                " serviceName='" + serviceName + '\n' +
+                " code=" + code + '\n' +
+                " userMessage='" + userMessage + '\n' +
+                " isError=" + isError + '\n' +
+                " supportContacts=" + Arrays.toString(supportContacts) +'\n' +
+                '}';
+    }
+
+
     @Getter
     @Setter
-    public static class SupportContact {
+    private static class SupportContact {
         @JsonProperty("id")
         private int id;
         @JsonProperty("phone")
@@ -38,18 +50,5 @@ public class JsonObject {
                     "\t email='" + email + '\n' +
                     '}';
         }
-    }
-
-    public JsonObject() {
-    }
-    @Override
-    public String toString() {
-        return "JsonObject{" + '\n' +
-                " serviceName='" + serviceName + '\n' +
-                " code=" + code + '\n' +
-                " userMessage='" + userMessage + '\n' +
-                " isError=" + isError + '\n' +
-                " supportContacts=" + Arrays.toString(supportContacts) +'\n' +
-                '}';
     }
 }
